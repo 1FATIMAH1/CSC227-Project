@@ -1,4 +1,5 @@
 // Process Control Block: all the information of one process
+// Written by: Fatimah Alzeer
 public class PCB {
 
     public static final String NEW = "New";

@@ -1,5 +1,6 @@
 // Thread 1 -> JobReaderThread, Thread 2 -> LongTermScheduler,
 // Thread 3 -> MediumTermScheduler, Main thread -> CPUScheduler
+// Written by: Leen Alkhathlan
 import java.util.Scanner;
 
 public class Main {

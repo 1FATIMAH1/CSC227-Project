@@ -1,4 +1,5 @@
 // Thread 1: reads job.txt into the job queue. Line format: ID:Burst:Priority;Memory (e.g. 1:25:4;500)
+// Written by: Fatimah Alzeer
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -41,7 +42,7 @@ public class JobReaderThread extends Thread {
                     int priority = Integer.parseInt(info[2].trim());
                     int memory = Integer.parseInt(parts[1].trim());
 
-                        if (burst <= 0) {
+                    if (burst <= 0) {
                         System.out.println("Line " + lineNumber + ": burst time must be positive, process skipped.");
                     } else if (priority < 1 || priority > 30) {
                         System.out.println("Line " + lineNumber + ": priority must be between 1 and 30, process skipped.");

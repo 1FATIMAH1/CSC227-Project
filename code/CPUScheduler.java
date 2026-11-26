@@ -1,4 +1,5 @@
 // Short-term scheduler (main thread): SJF, RR (q = 5 ms), Non-Preemptive Priority with aging
+// Written by: Leen Alkhathlan
 import java.util.ArrayList;
 
 public class CPUScheduler {
@@ -38,6 +39,7 @@ public class CPUScheduler {
             }
 
             // 3) medium-term scheduler (Thread 3)
+            sys.cpuBusy = (running != null);
             sys.mediumTermStart.release();
             sys.mediumTermDone.acquire();
 

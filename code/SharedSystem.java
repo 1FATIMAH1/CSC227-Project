@@ -1,4 +1,5 @@
 // Data shared by all threads: queues, memory, clock and semaphores
+// Written by: Noura bin moammar
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -21,6 +22,7 @@ public class SharedSystem {
     public boolean simulationFinished = false;
     public boolean mediumTermEnabled = false;
     public String algorithm = "";
+    public boolean cpuBusy = false;          // true if a process is running on the CPU
 
     // binary semaphore used as a mutex lock for the queues and the memory
     // (acquire() = wait(), release() = signal())

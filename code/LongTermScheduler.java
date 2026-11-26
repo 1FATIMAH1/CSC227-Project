@@ -1,4 +1,5 @@
 // Thread 2: moves jobs from the job queue to the ready queue (FIFO) if there is enough free memory
+// Written by: Noura bin moammar
 
 public class LongTermScheduler extends Thread {
 

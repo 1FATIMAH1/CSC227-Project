@@ -1,4 +1,5 @@
 // Prints the Gantt chart, processes table, averages and starved processes
+// Written by: Fatimah Alzeer
 import java.util.ArrayList;
 
 public class OutputPrinter {

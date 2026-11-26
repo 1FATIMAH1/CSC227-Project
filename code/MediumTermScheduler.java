@@ -1,4 +1,5 @@
 // Thread 3: usage > 90% -> swap out the largest ready process, usage < 70% -> swap one back in
+// Written by: Noura bin moammar
 
 public class MediumTermScheduler extends Thread {
 
@@ -40,7 +41,9 @@ public class MediumTermScheduler extends Thread {
     private void checkMemory() {
         double usage = sys.getUtilization();
 
-        if (usage > SharedSystem.HIGH_THRESHOLD * 100 && !sys.readyQueue.isEmpty()) {
+        // don't swap out the only process if the CPU is free
+        boolean canSwapOut = sys.readyQueue.size() > 1 || (sys.readyQueue.size() == 1 && sys.cpuBusy);
+        if (usage > SharedSystem.HIGH_THRESHOLD * 100 && canSwapOut) {
             swapOut(usage);
         } else if (usage < SharedSystem.LOW_THRESHOLD * 100 && !sys.suspendQueue.isEmpty()) {
             PCB p = sys.suspendQueue.getFirst();
